@@ -24,21 +24,25 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+
 #include "inc/hw_memmap.h"
 #include "inc/hw_types.h"
 #include "inc/hw_gpio.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
 #include "driverlib/rom.h"
-#include "drivers/buttons.h"
 #include "utils/uartstdio.h"
-#include "app/switch_task.h"
-#include "app/led_task.h"
-#include "app/priorities.h"
+
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
+
+#include "drivers/buttons.h"
+#include "tm4c123glx_freertos_tivaware_gcc/switch_task.h"
+#include "tm4c123glx_freertos_tivaware_gcc/led_task.h"
+#include "tm4c123glx_freertos_tivaware_gcc/priorities.h"
+
 
 //*****************************************************************************
 //
