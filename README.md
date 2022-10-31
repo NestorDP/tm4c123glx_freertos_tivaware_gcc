@@ -25,40 +25,40 @@ to upload images to the Launchpad
 
 ### ARM GCC Compiler
 
-  Download tha [ARM Gnu Toochain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads). The next step is to copy to the toochain to the PATH system variable, as you can see below.
+Download tha [ARM Gnu Toochain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads). The next step is to copy to the toochain to the PATH system variable, as you can see below.
 
-  ```console
-  foo@bar:~$ export PATH=$PATH:/home/nestor/Documents/littlebot/firmware/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin
+```console
+~$ export PATH=$PATH:/home/nestor/Documents/littlebot/firmware/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin
   ```
 
 
 ### TivaWare Driverlib
 
   ```console
-foo@bar:~$ mkdir <TivaWarePah>
-foo@bar:~$ cd <TivaWarePah>
-foo@bar:~$ mv <directory_downloaded>/SW-TM4C-2.1.1.71.exe
-foo@bar:~$ unzip SW-TM4C-2.1.1.71.exe
-foo@bar:~$ rm SW-TM4C-2.1.1.71.exe
-foo@bar:~$ export TIVAWARE_PATH=/your/tivaware/path
+~$ mkdir <TivaWarePah>
+~$ cd <TivaWarePah>
+~$ mv <directory_downloaded>/SW-TM4C-2.1.1.71.exe
+~$ unzip SW-TM4C-2.1.1.71.exe
+~$ rm SW-TM4C-2.1.1.71.exe
+~$ export TIVAWARE_PATH=/your/tivaware/path
 ```
 
 ### lm4flash
 
 ```console
-foo@bar:~$ git clone https://github.com/utzig/lm4tools.git
-foo@bar:~$ cd lm4tools/lm4ﬂash
-foo@bar:~$ make
-foo@bar:~$ sudo cp lm4flash /usr/local/bin
+~$ git clone https://github.com/utzig/lm4tools.git
+~$ cd lm4tools/lm4ﬂash
+~$ make
+~$ sudo cp lm4flash /usr/local/bin
 ```
 
 ### Clone the repository
 
 ```console
-foo@bar:~$ https://github.com/NestorDP/tm4c123glx_freertos_tivaware_gcc.git
-foo@bar:~$ cd tm4c123glx_freertos_tivaware
-foo@bar:~$ git submodule init
-foo@bar:~$ git submodule update
+~$ https://github.com/NestorDP/tm4c123glx_freertos_tivaware_gcc.git
+~$ cd tm4c123glx_freertos_tivaware
+~$ git submodule init
+~$ git submodule update
 ```
 
 ## Run code example
