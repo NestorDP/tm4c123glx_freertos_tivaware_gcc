@@ -12,7 +12,7 @@ The port is still at an early development stage and includes only very basic
 demo tasks. More complex tasks will be included in the future.
 
 git
-# Setup the environment
+## Setup the environment
 <!-- * _Tiva&#x2122; C series TM4C123GLX Launchpad_
 * A _Micro-B USB cable_, usually shipped with a Launchpad
 * _[GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)_,
@@ -23,14 +23,14 @@ _[TI LMFlash Programmer](http://www.ti.com/tool/lmflashprogrammer)_
 to upload images to the Launchpad
 * Opt  -->
 
-## ARM GCC Compiler
+### ARM GCC Compiler
 
-## TivaWare Driverlib
+### TivaWare Driverlib
 
-## Clone the repository
+### Clone the repository
 
-# Run code example
+## Run code example
 
-# Debug
+## Debug
 
-# References
+## References
