@@ -56,7 +56,7 @@ DEB_FLAG = -g -DDEBUG
 # Directories variables 
 #---------------------
 PORT_TARGET = GCC/ARM_CM4F/
-OBJ_DIR 			= obj/
+OBJ_DIR 		= obj/
 DRIVERS_DIR = drivers/
 SRC_DIR 		= src/
 

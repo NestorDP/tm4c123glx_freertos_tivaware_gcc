@@ -197,12 +197,12 @@ uint32_t LEDTaskInit(void)
     // Initialize the GPIOs and Timers that drive the three LEDs.
     //
     RGBInit(1);
-    RGBIntensitySet(0.3f);
+    RGBIntensitySet(0.1f);
 
     //
     // Turn on the Green LED
     //
-    g_ui8ColorsIndx = 0;
+    g_ui8ColorsIndx = 2;
     g_pui32Colors[g_ui8ColorsIndx] = 0x8000;
     RGBColorSet(g_pui32Colors);
 
