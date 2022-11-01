@@ -58,6 +58,7 @@ Download tha [ARM Gnu Toochain](https://developer.arm.com/downloads/-/arm-gnu-to
 ~$ https://github.com/NestorDP/tm4c123glx_freertos_tivaware_gcc.git
 ~$ cd tm4c123glx_freertos_tivaware
 ~$ git submodule init
+Submodule 'FreeRTOS/Source' (https://github.com/FreeRTOS/FreeRTOS-Kernel.git) registered for path 'FreeRTOS/Source'
 ~$ git submodule update
 ```
 
