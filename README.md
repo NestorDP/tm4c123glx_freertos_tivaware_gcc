@@ -31,8 +31,9 @@ Download tha [ARM Gnu Toochain](https://developer.arm.com/downloads/-/arm-gnu-to
 foo@bar:~$ export PATH=$PATH:/home/nestor/Documents/littlebot/firmware/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin
   ```
 
-
 ### TivaWare Driverlib
+
+Download the [TivaWare Driverlib](https://www.ti.com/tool/SW-TM4C).
 
   ```console
 foo@bar:~$ mkdir tivaware
