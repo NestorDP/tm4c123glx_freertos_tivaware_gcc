@@ -28,38 +28,40 @@ to upload images to the Launchpad
 Download tha [ARM Gnu Toochain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads). The next step is to copy to the toochain to the PATH system variable, as you can see below.
 
 ```console
-~$ export PATH=$PATH:/home/nestor/Documents/littlebot/firmware/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin
+foo@bar:~$ export PATH=$PATH:/home/nestor/Documents/littlebot/firmware/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin
   ```
 
 
 ### TivaWare Driverlib
 
   ```console
-~$ mkdir tivaware
-~$ cd tivawarePah
-~$ mv <directory_downloaded>/SW-TM4C-2.1.1.71.exe
-~$ unzip SW-TM4C-2.1.1.71.exe
-~$ rm SW-TM4C-2.1.1.71.exe
-~$ export TIVAWARE_PATH=/your/tivaware/path/tivaware
+foo@bar:~$ mkdir tivaware
+foo@bar:~$ cd tivawarePah
+foo@bar:~$ mv <directory_downloaded>/SW-TM4C-2.1.1.71.exe
+foo@bar:~$ unzip SW-TM4C-2.1.1.71.exe
+foo@bar:~$ rm SW-TM4C-2.1.1.71.exe
+foo@bar:~$ export TIVAWARE_PATH=/your/tivaware/path/tivaware
 ```
 
 ### lm4flash
 
 ```console
-~$ git clone https://github.com/utzig/lm4tools.git
-~$ cd lm4tools/lm4ﬂash
-~$ make
-~$ sudo cp lm4flash /usr/local/bin
+foo@bar:~$ git clone https://github.com/utzig/lm4tools.git
+foo@bar:~$ cd lm4tools/lm4ﬂash
+foo@bar:~$ make
+foo@bar:~$ sudo cp lm4flash /usr/local/bin
 ```
 
 ### Clone the repository
 
 ```console
-~$ https://github.com/NestorDP/tm4c123glx_freertos_tivaware_gcc.git
-~$ cd tm4c123glx_freertos_tivaware
-~$ git submodule init
+foo@bar:~$ https://github.com/NestorDP/tm4c123glx_freertos_tivaware_gcc.git
+foo@bar:~$ cd tm4c123glx_freertos_tivaware
+foo@bar:~$ git submodule init
 Submodule 'FreeRTOS/Source' (https://github.com/FreeRTOS/FreeRTOS-Kernel.git) registered for path 'FreeRTOS/Source'
-~$ git submodule update
+foo@bar:~$ git submodule update
+Cloning into '/home/nestor/tm4c123glx_freertos_tivaware_gcc/FreeRTOS/Source'...
+Submodule path 'FreeRTOS/Source': checked out '44e02bff3103d7522358905f0bad8023c17a784b'
 ```
 
 ## Run code example
