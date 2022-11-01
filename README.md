@@ -35,12 +35,12 @@ Download tha [ARM Gnu Toochain](https://developer.arm.com/downloads/-/arm-gnu-to
 ### TivaWare Driverlib
 
   ```console
-~$ mkdir <TivaWarePah>
-~$ cd <TivaWarePah>
+~$ mkdir tivaware
+~$ cd tivawarePah
 ~$ mv <directory_downloaded>/SW-TM4C-2.1.1.71.exe
 ~$ unzip SW-TM4C-2.1.1.71.exe
 ~$ rm SW-TM4C-2.1.1.71.exe
-~$ export TIVAWARE_PATH=/your/tivaware/path
+~$ export TIVAWARE_PATH=/your/tivaware/path/tivaware
 ```
 
 ### lm4flash
