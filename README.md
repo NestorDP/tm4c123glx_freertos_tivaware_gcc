@@ -1,13 +1,13 @@
 # About
 This is a tamplete project to the
-Texas Instruments [TM4C123GLX Launchpad](http://www.ti.com/tool/ek-tm4c123gxl), based on ARM&#xae; Cortex&#xae;-M4F microcontrollers with [FreeRTOS&#x2122;](http://www.freertos.org/) and the [TivaWare&#x2122; Peripheral Driver Library](https://www.ti.com/lit/ug/spmu298e/spmu298e.pdf?ts=1667346399713&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTM4C123GH6PM) build with gcc compiler from the [GNU Arm Embedded Toolchain](https://developer.arm.com/downloads/-/gnu-rm)
+Texas Instruments [TM4C123GLX Launchpad](http://www.ti.com/tool/ek-tm4c123gxl), based on ARM&#xae; Cortex&#xae;-M4F microcontrollers with [FreeRTOS&#x2122;](http://www.freertos.org/) and the [TivaWare&#x2122; Peripheral Driver Library](https://www.ti.com/lit/ug/spmu298e/spmu298e.pdf?ts=1667346399713&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTM4C123GH6PM) build with gcc compiler from the [Arm GNU Embedded Toolchain](https://developer.arm.com/downloads/-/gnu-rm)
 
 
 ## Setup the environment
 
-### ARM GCC Compiler
+### GCC Compiler
 
-Download tha [ARM Gnu Toochain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads). The next step is to copy to the toochain to the PATH system variable, as you can see below.
+Download tha [Arm GNU Toochain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads). The next step is to copy to the toochain to the PATH system variable, as you can see below.
 
 ```console
 foo@bar:~$ export PATH=$PATH:/home/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin

@@ -51,46 +51,46 @@ FREERTOS_MEMMANG_OBJS = heap_2.o
 #FREERTOS_MEMMANG_OBJS = heap_4.o
 #FREERTOS_MEMMANG_OBJS = heap_5.o
 
-FREERTOS_PORT_OBJS = port.o
+FREERTOS_PORT_OBJS  = port.o
 
 FREERTOS_PORT_SOURCE= $(shell ls $(FREERTOS_PORT_DIR)*.c)
-DRIVERS_SOURCES 		= $(shell ls $(DRIVERS_DIR)*.c)
-SRC_SOURCES 			 	= $(shell ls $(SRC_DIR)*.c)
+DRIVERS_SOURCES     = $(shell ls $(DRIVERS_DIR)*.c)
+SRC_SOURCES         = $(shell ls $(SRC_DIR)*.c)
 
-FREERTOS_PORT_OBJS	= $(patsubst $(FREERTOS_PORT_DIR)%,$(OBJ_DIR)%,$(FREERTOS_PORT_SOURCE:.c=.o))
-DRIVERS_OBJS			 	= $(patsubst $(DRIVERS_DIR)%,$(OBJ_DIR)%,$(DRIVERS_SOURCES:.c=.o))
-SRC_OBJS				 		= $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRC_SOURCES:.c=.o))
+FREERTOS_PORT_OBJS  = $(patsubst $(FREERTOS_PORT_DIR)%,$(OBJ_DIR)%,$(FREERTOS_PORT_SOURCE:.c=.o))
+DRIVERS_OBJS        = $(patsubst $(DRIVERS_DIR)%,$(OBJ_DIR)%,$(DRIVERS_SOURCES:.c=.o))
+SRC_OBJS            = $(patsubst $(SRC_DIR)%,$(OBJ_DIR)%,$(SRC_SOURCES:.c=.o))
 
-OBJS = $(addprefix $(OBJ_DIR), $(FREERTOS_OBJS))    
-OBJS+= $(addprefix $(OBJ_DIR), $(FREERTOS_MEMMANG_OBJS))
-OBJS+= $(FREERTOS_PORT_OBJS)
-OBJS+= $(DRIVERS_OBJS)
-OBJS+= $(SRC_OBJS)
+OBJS  = $(addprefix $(OBJ_DIR), $(FREERTOS_OBJS))    
+OBJS  += $(addprefix $(OBJ_DIR), $(FREERTOS_MEMMANG_OBJS))
+OBJS  += $(FREERTOS_PORT_OBJS)
+OBJS  += $(DRIVERS_OBJS)
+OBJS  += $(SRC_OBJS)
 
 # Get the location of libgcc.a, libc.a and libm.a from the GCC front-end.
 #---------------------
-LIBGCC:=${shell ${CC} ${CFLAGS} -print-libgcc-file-name}
-LIBC	:=${shell ${CC} ${CFLAGS} -print-file-name=libc.a}
-LIBM	:=${shell ${CC} ${CFLAGS} -print-file-name=libm.a}
+LIBGCC :=${shell ${CC} ${CFLAGS} -print-libgcc-file-name}
+LIBC   :=${shell ${CC} ${CFLAGS} -print-file-name=libc.a}
+LIBM   :=${shell ${CC} ${CFLAGS} -print-file-name=libm.a}
 
 # Include paths to be passed to $(CC) where necessary
 #---------------------
-INC_DIR 			= include/
-INC_FREERTOS	= $(FREERTOS_SRC_DIR)include/
-INC_TIVAWARE	= $(TIVAWARE_DIR)/
-INC_FLAGS 		= -I $(INC_FREERTOS) -I $(SRC_DIR) -I $(FREERTOS_PORT_DIR) -I $(INC_DIR) -I $(INC_TIVAWARE)
+INC_DIR       = include/
+INC_FREERTOS  = $(FREERTOS_SRC_DIR)include/
+INC_TIVAWARE  = $(TIVAWARE_DIR)/
+INC_FLAGS     = -I $(INC_FREERTOS) -I $(SRC_DIR) -I $(FREERTOS_PORT_DIR) -I $(INC_DIR) -I $(INC_TIVAWARE)
 
 # Dependency on HW specific settings
 #---------------------
-DEP_BSP 				= $(INC_DIR)drivers/bsp.h
-DEP_FRTOS_CONFIG= $(SRC_DIR)FreeRTOSConfig.h
-DEP_SETTINGS 		= $(DEP_FRTOS_CONFIG)
+DEP_BSP          = $(INC_DIR)drivers/bsp.h
+DEP_FRTOS_CONFIG = $(SRC_DIR)FreeRTOSConfig.h
+DEP_SETTINGS     = $(DEP_FRTOS_CONFIG)
 
 # Definition of the linker script and final targets
 #---------------------
 LINKER_SCRIPT = $(addprefix , tm4c123gh6pm.lds)
-ELF_IMAGE 		= image.elf
-TARGET 				= image.bin
+ELF_IMAGE     = image.elf
+TARGET        = image.bin
 
 # Make rules:
 #---------------------
