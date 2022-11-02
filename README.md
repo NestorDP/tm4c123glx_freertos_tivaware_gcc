@@ -1,8 +1,7 @@
 # About
-[FreeRTOS](http://www.freertos.org/), ported to the
-[Texas Instruments TM4C123GLX Launchpad](http://www.ti.com/tool/ek-tm4c123gxl), 
-[TI TM4C123GH6PM](http://www.ti.com/lit/ds/symlink/tm4c123gh6pm.pdf)
-microcontroller, based on ARM&#xae; Cortex-M4F.
+This is a tamplete project to the
+Texas Instruments [TM4C123GLX Launchpad](http://www.ti.com/tool/ek-tm4c123gxl), based on ARM&#xae; Cortex&#xae;-M4F microcontrollers with [FreeRTOS&#x2122;](http://www.freertos.org/) and the [TivaWare&#x2122; Peripheral Driver Library](https://www.ti.com/lit/ug/spmu298e/spmu298e.pdf?ts=1667346399713&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTM4C123GH6PM) build with gcc compiler from the [GNU Arm Embedded Toolchain](https://developer.arm.com/downloads/-/gnu-rm)
+
 
 ## Setup the environment
 
@@ -104,5 +103,3 @@ Info : Listening on port 3333 for gdb connections
   ]
 }
 ```
-
-## References
