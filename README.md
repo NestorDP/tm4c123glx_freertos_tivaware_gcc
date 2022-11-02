@@ -39,10 +39,10 @@ foo@bar:lm4ﬂash$ sudo cp lm4flash /usr/local/bin
 
 ```console
 foo@bar:~$ https://github.com/NestorDP/tm4c123glx_freertos_tivaware_gcc.git
-foo@bar:~$ cd tm4c123glx_freertos_tivaware
-foo@bar:tm4c123glx_freertos_tivaware$ git submodule init
+foo@bar:~$ cd ttm4c123glx_freertos_tivaware_gcc
+foo@bar:tm4c123glx_freertos_tivaware_gcc$ git submodule init
 Submodule 'FreeRTOS/Source' (https://github.com/FreeRTOS/FreeRTOS-Kernel.git) registered for path 'FreeRTOS/Source'
-foo@bar:tm4c123glx_freertos_tivaware$ git submodule update
+foo@bar:tm4c123glx_freertos_tivaware_gcc$ git submodule update
 Cloning into '/home/nestor/tm4c123glx_freertos_tivaware_gcc/FreeRTOS/Source'...
 Submodule path 'FreeRTOS/Source': checked out '44e02bff3103d7522358905f0bad8023c17a784b'
 ```
@@ -54,7 +54,7 @@ Install [OpenOCD](https://openocd.org/pages/getting-openocd.html)
 
 Compile the project with debug flag:
 ```console
-foo@bar:tm4c123glx_freertos_gcc$ make debug
+foo@bar:tm4c123glx_freertos_tivaware_gcc$ make debug
 ```
 
 Run OCD server:
