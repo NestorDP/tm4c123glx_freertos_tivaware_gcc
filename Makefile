@@ -90,17 +90,17 @@ DEP_SETTINGS     = $(DEP_FRTOS_CONFIG)
 #---------------------
 LINKER_SCRIPT = $(addprefix , tm4c123gh6pm.lds)
 ELF_IMAGE     = image.elf
-TARGET        = image.bin
+TARGET_IMAGE  = image.bin
 
 # Make rules:
 #---------------------
 print-%  : ; @echo $* = $($*)
 
-all : $(TARGET)
+all : $(TARGET_IMAGE)
 
 rebuild : clean all
 
-$(TARGET) : $(OBJ_DIR) $(ELF_IMAGE)
+$(TARGET_IMAGE) : $(OBJ_DIR) $(ELF_IMAGE)
 	$(OBJCOPY) -O binary $(word 2,$^) $@
 
 $(OBJ_DIR) :
@@ -154,13 +154,13 @@ clean : clean_intermediate
 help :
 	@echo
 	@echo Valid targets:
-	@echo - all: builds missing dependencies and creates the target image \'$(IMAGE)\'.
-	@echo - rebuild: rebuilds all dependencies and creates the target image \'$(IMAGE)\'.
+	@echo - all: builds missing dependencies and creates the target image \'$(TARGET_IMAGE)\'.
+	@echo - rebuild: rebuilds all dependencies and creates the target image \'$(TARGET_IMAGE)\'.
 	@echo - debug: same as \'all\', also includes debugging symbols to \'$(ELF_IMAGE)\'.
 	@echo - debug_rebuild: same as \'rebuild\', also includes debugging symbols to \'$(ELF_IMAGE)\'.
-	@echo - clean_obj: deletes all object files, only keeps \'$(ELF_IMAGE)\' and \'$(IMAGE)\'.
-	@echo - clean_intermediate: deletes all intermediate binaries, only keeps the target image \'$(IMAGE)\'.
-	@echo - clean: deletes all intermediate binaries, incl. the target image \'$(IMAGE)\'.
+	@echo - clean_obj: deletes all object files, only keeps \'$(ELF_IMAGE)\' and \'$(TARGET_IMAGE)\'.
+	@echo - clean_intermediate: deletes all intermediate binaries, only keeps the target image \'$(TARGET_IMAGE)\'.
+	@echo - clean: deletes all intermediate binaries, incl. the target image \'$(TARGET_IMAGE)\'.
 	@echo - help: displays these help instructions.
 	@echo
 
