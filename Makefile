@@ -29,13 +29,13 @@ DEB_FLAG = -g -DDEBUG
 # Directories variables 
 #---------------------
 PORT_TARGET = GCC/ARM_CM4F/
-OBJ_DIR 		= obj/
+OBJ_DIR     = obj/
 DRIVERS_DIR = drivers/
-SRC_DIR 		= src/
+SRC_DIR     = src/
 
-FREERTOS_SRC_DIR 		 = FreeRTOS/Source/
+FREERTOS_SRC_DIR     = FreeRTOS/Source/
 FREERTOS_MEMMANG_DIR = $(FREERTOS_SRC_DIR)portable/MemMang/
-FREERTOS_PORT_DIR 	 = $(FREERTOS_SRC_DIR)portable/$(PORT_TARGET)
+FREERTOS_PORT_DIR    = $(FREERTOS_SRC_DIR)portable/$(PORT_TARGET)
 
 # Object files
 #---------------------
@@ -69,9 +69,9 @@ OBJS  += $(SRC_OBJS)
 
 # Get the location of libgcc.a, libc.a and libm.a from the GCC front-end.
 #---------------------
-LIBGCC :=${shell ${CC} ${CFLAGS} -print-libgcc-file-name}
-LIBC   :=${shell ${CC} ${CFLAGS} -print-file-name=libc.a}
-LIBM   :=${shell ${CC} ${CFLAGS} -print-file-name=libm.a}
+LIBGCC := ${shell ${CC} ${CFLAGS} -print-libgcc-file-name}
+LIBC   := ${shell ${CC} ${CFLAGS} -print-file-name=libc.a}
+LIBM   := ${shell ${CC} ${CFLAGS} -print-file-name=libm.a}
 
 # Include paths to be passed to $(CC) where necessary
 #---------------------
