@@ -1,55 +1,28 @@
-# Copyright 2014, 2017, Jernej Kovacic
+# Copyright 2022, Nestor Neto
 #
-# Permission is hereby granted, free of charge, to any person obtaining a copy of
-# this software and associated documentation files (the "Software"), to deal in
-# the Software without restriction, including without limitation the rights to
-# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-# the Software, and to permit persons to whom the Software is furnished to do so,
-# subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software. If you wish to use our Amazon
-# FreeRTOS name, please do so in a fair use way that does not cause confusion.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-#
-# Type "make help" for more details.
-#
-
-
-# Version "6-2017-q2-update" of the "GNU Arm Embedded Toolchain" is used
-# as a build tool. See comments in "setenv.sh" for more details about
-# downloading it and setting the appropriate environment variables.
 
 TOOLCHAIN = arm-none-eabi-
-CC 				= $(TOOLCHAIN)gcc
-CXX 			= $(TOOLCHAIN)g++
-AS 				= $(TOOLCHAIN)as
-LD 				= $(TOOLCHAIN)ld
-OBJCOPY 	= $(TOOLCHAIN)objcopy
-AR 				= $(TOOLCHAIN)ar
+CC        = $(TOOLCHAIN)gcc
+CXX       = $(TOOLCHAIN)g++
+AS        = $(TOOLCHAIN)as
+LD        = $(TOOLCHAIN)ld
+OBJCOPY   = $(TOOLCHAIN)objcopy
+AR        = $(TOOLCHAIN)ar
 
 # GCC flags
 #--------------------
-CPUFLAG = -mthumb -mcpu=cortex-m4
-WFLAG   = -Wall 
-WFLAG  +=-Wextra
-FPUFLAG+=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
+CPUFLAG  = -mthumb -mcpu=cortex-m4
+WFLAG    = -Wall 
+WFLAG   +=-Wextra
+FPUFLAG +=-mfpu=fpv4-sp-d16 -mfloat-abi=hard
 
-CFLAGS  = $(CPUFLAG) 
-CFLAGS += $(WFLAG) 
-CFLAGS += $(FPUFLAG)
-CFLAGS += -std=c99 
-CFLAGS += -ffunction-sections 
-CFLAGS += -fdata-sections 
-CFLAGS += -DPART_TM4C123GH6PM
+CFLAGS   = $(CPUFLAG) 
+CFLAGS  += $(WFLAG) 
+CFLAGS  += $(FPUFLAG)
+CFLAGS  += -std=c99 
+CFLAGS  += -ffunction-sections 
+CFLAGS  += -fdata-sections 
+CFLAGS  += -DPART_TM4C123GH6PM
 
 DEB_FLAG = -g -DDEBUG
 
@@ -160,11 +133,12 @@ $(OBJ_DIR)%.o : $(FREERTOS_MEMMANG_DIR)%.c $(DEP_FRTOS_CONFIG)
 $(OBJ_DIR)%.o : $(DRIVERS_DIR)%.c
 	$(CC) -c $(CFLAGS) $(INC_FLAGS) $< -o $@
 
-# Application
+# Main Code
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c $(DEP_SETTINGS)
 	$(CC) -c $(CFLAGS) $(INC_FLAGS) $< -o $@
 
 # Cleanup directives:
+#---------------------
 clean_obj :
 	$(RM) -r $(OBJ_DIR)
 
@@ -176,6 +150,7 @@ clean : clean_intermediate
 	$(RM) *.bin
 
 # Short help instructions:
+#---------------------
 help :
 	@echo
 	@echo Valid targets:
