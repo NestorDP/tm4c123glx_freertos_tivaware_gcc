@@ -49,57 +49,54 @@ Submodule path 'FreeRTOS/Source': checked out '44e02bff3103d7522358905f0bad8023c
 
 ## Run code example
 
-## Debug
-Install [OpenOCD](https://openocd.org/pages/getting-openocd.html)
+## Debug with GDB+OpenOCD in VSCode
+Install [OpenOCD](https://sourceforge.net/p/openocd/code/ci/master/tree/)
+
+```console
+foo@bar:~$ git clone https://git.code.sf.net/p/openocd/code openocd-code
+foo@bar:~$ cd openocd-code
+foo@bar:openocd-code$ ./bootstrap
+foo@bar:openocd-code$ ./configure
+foo@bar:openocd-code$ make
+foo@bar:openocd-code$ sudo make install
+```
+
+Install the ARM Cortex-M Debugger suport for VSCode [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
+
 
 Compile the project with debug flag:
 ```console
 foo@bar:tm4c123glx_freertos_tivaware_gcc$ make debug
 ```
 
-Run OCD server:
-```console
-foo@bar:~$ openocd -f /usr/local/share/openocd/scripts/board/ek-tm4c123gxl.cfg
-Open On-Chip Debugger 0.12.0-rc2+dev-00962-g12ce17094 (2022-10-27-21:06)
-Licensed under GNU GPL v2
-For bug reports, read
-	http://openocd.org/doc/doxygen/bugs.html
-WARNING: board/ek-tm4c123gxl.cfg is deprecated, please switch to board/ti_ek-tm4c123gxl.cfg
-Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
-Info : Listening on port 6666 for tcl connections
-Info : Listening on port 4444 for telnet connections
-Info : clock speed 21845 kHz
-Info : ICDI Firmware version: 9270
-Error: SRST error
-Info : [tm4c123gh6pm.cpu] Cortex-M4 r0p1 processor detected
-Info : [tm4c123gh6pm.cpu] target has 6 breakpoints, 4 watchpoints
-Info : starting gdb server for tm4c123gh6pm.cpu on 3333
-Info : Listening on port 3333 for gdb connections
-```
 
  JSON file to debug configuration in VScode.
 ```json
 {
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
 "version": "0.2.0",
   "configurations": [
       {
-          "name": "Launch gdb-multiarch",
-          "type": "cppdbg",
-          "request": "launch",
-          "miDebuggerPath": "arm-none-eabi-gdb",
-          "miDebuggerArgs": "-ex",
-          "MIMode": "gdb",
-          "program": "${workspaceFolder}/image.elf",
-            "setupCommands": [
-              {"text": "target remote localhost:3333"},
-              {"text": "file 'image.elf'"},
-              {"text": "load"},
-              {"text": "break main","ignoreFailures": true}
-          ],
-          "launchCompleteCommand": "None",
-          "externalConsole": false,
-          "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceRoot}",
+        "executable": "${workspaceRoot}/image.elf",
+        "name": "Debug Microcontroller",
+        "request": "launch",
+        "type": "cortex-debug",
+        "servertype": "openocd",
+        "serverpath": "openocd",
+        "configFiles": ["/usr/local/share/openocd/scripts/board/ti_ek-tm4c123gxl.cfg"],
+        "gdbTarget": "localhost:3333",
+        "rtos": "FreeRTOS",
+        // "device": "",
+        // "interface": "",
+        "showDevDebugOutput": "raw",
+        "runToMain": true
       }
   ]
 }
+
 ```
+
+![VSCode debug](https://user-images.githubusercontent.com/37759765/209450878-1e33e944-96c7-45b6-9cda-cbb19d3441e6.png)
