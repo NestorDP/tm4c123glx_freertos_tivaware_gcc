@@ -13,6 +13,7 @@ Download tha [Arm GNU Toochain](https://developer.arm.com/downloads/-/arm-gnu-to
 foo@bar:~$ export PATH=$PATH:/home/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin
   ```
 
+If you have
 ### TivaWare Driverlib
 
 Download the [TivaWare Driverlib](https://www.ti.com/tool/SW-TM4C).
@@ -24,6 +25,12 @@ foo@bar:tivaware$ mv <directory_downloaded>/SW-TM4C-2.1.1.71.exe
 foo@bar:tivaware$ unzip SW-TM4C-2.1.1.71.exe
 foo@bar:tivaware$ rm SW-TM4C-2.1.1.71.exe
 foo@bar:tivaware$ export TIVAWARE_DIR=/your/tivaware/path/tivaware
+```
+
+### udev rules
+
+```console
+foo@bar:~$ echo 'ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="00fd", GROUP="users", MODE="0660"' | sudo tee /etc/udev/rules.d/99-stellaris-launchpad.rules
 ```
 
 ### lm4flash
