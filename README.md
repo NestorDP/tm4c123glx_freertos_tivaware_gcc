@@ -21,7 +21,7 @@ Download the [TivaWare Driverlib](https://www.ti.com/tool/SW-TM4C).
   ```console
 foo@bar:~$ mkdir tivaware
 foo@bar:~$ cd tivaware
-foo@bar:tivaware$ mv <directory_downloaded>/SW-TM4C-2.1.1.71.exe
+foo@bar:tivaware$ mv <directory_downloaded>/SW-TM4C-2.1.1.71.exe .
 foo@bar:tivaware$ unzip SW-TM4C-2.1.1.71.exe
 foo@bar:tivaware$ rm SW-TM4C-2.1.1.71.exe
 foo@bar:tivaware$ export TIVAWARE_DIR=/your/tivaware/path/tivaware
