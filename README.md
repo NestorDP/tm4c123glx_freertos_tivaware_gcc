@@ -34,7 +34,7 @@ foo@bar:~$ echo 'ATTRS{idVendor}=="1cbe", ATTRS{idProduct}=="00fd", GROUP="users
 ```
 
 ### lm4flash
-
+maybe you will need to install: sudo apt install libusb-1.0-0-dev
 ```console
 foo@bar:~$ git clone https://github.com/utzig/lm4tools.git
 foo@bar:~$ cd lm4tools/lm4ﬂash
